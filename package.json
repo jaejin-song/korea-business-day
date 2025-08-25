@@ -1,9 +1,10 @@
 {
   "name": "korea-business-day",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "한국의 영업일, 공휴일, 주식시장 개장일을 계산하는 Typescript 라이브러리",
   "type": "module",
   "license": "MIT",
+  "packageManager": "pnpm@9.2.0",
   "homepage": "https://github.com/jaejin-song/korea-business-day#readme",
   "bugs": {
     "url": "https://github.com/jaejin-song/korea-business-day/issues"
