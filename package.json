@@ -1,0 +1,43 @@
+{
+  "name": "korea-business-day",
+  "version": "0.1.0",
+  "description": "한국의 영업일, 공휴일, 주식시장 개장일을 계산하는 Typescript 라이브러리",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/jaejin-song/korea-business-day#readme",
+  "bugs": {
+    "url": "https://github.com/jaejin-song/korea-business-day/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaejin-song/korea-business-day.git"
+  },
+  "author": "Jaejin Song <wowlxx28@gmail.com>",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && npm publish"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "bumpp": "^10.1.0",
+    "tsdown": "^0.11.9",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.3"
+  }
+}

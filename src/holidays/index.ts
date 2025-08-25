@@ -1,0 +1,26 @@
+import type { DateString } from "../types";
+
+import { HOLIDAYS_2022, TRADING_HOLIDAYS_2022 } from "./2022";
+import { HOLIDAYS_2023, TRADING_HOLIDAYS_2023 } from "./2023";
+import { HOLIDAYS_2024, TRADING_HOLIDAYS_2024 } from "./2024";
+import { HOLIDAYS_2025, TRADING_HOLIDAYS_2025 } from "./2025";
+import { HOLIDAYS_2026, TRADING_HOLIDAYS_2026 } from "./2026";
+import { HOLIDAYS_2027, TRADING_HOLIDAYS_2027 } from "./2027";
+
+export const holidaysByYear: Record<string, DateString[]> = {
+  "2022": HOLIDAYS_2022,
+  "2023": HOLIDAYS_2023,
+  "2024": HOLIDAYS_2024,
+  "2025": HOLIDAYS_2025,
+  "2026": HOLIDAYS_2026,
+  "2027": HOLIDAYS_2027,
+};
+
+export const tradingHolidaysByYear: Record<string, DateString[]> = {
+  "2022": TRADING_HOLIDAYS_2022,
+  "2023": TRADING_HOLIDAYS_2023,
+  "2024": TRADING_HOLIDAYS_2024,
+  "2025": TRADING_HOLIDAYS_2025,
+  "2026": TRADING_HOLIDAYS_2026,
+  "2027": TRADING_HOLIDAYS_2027,
+};
