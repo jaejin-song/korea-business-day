@@ -25,7 +25,7 @@ export const isBusinessDay = (date: DateString): boolean => {
  * nextBusinessDay('2024-12-31'); // '2025-01-02' (연말연시 다음 영업일)
  */
 export const nextBusinessDay = (date: DateString): DateString => {
-  let d = toDate(date);
+  const d = toDate(date);
   d.setUTCDate(d.getUTCDate() + 1);
 
   while (!isBusinessDay(toDateString(d))) {
@@ -45,7 +45,7 @@ export const nextBusinessDay = (date: DateString): DateString => {
  * previousBusinessDay('2024-03-02'); // '2024-02-29' (3월 1일 삼일절 이전 영업일)
  */
 export const previousBusinessDay = (date: DateString): DateString => {
-  let d = toDate(date);
+  const d = toDate(date);
   d.setUTCDate(d.getUTCDate() - 1);
 
   while (!isBusinessDay(toDateString(d))) {
@@ -79,7 +79,7 @@ export const isTradingDay = (date: DateString): boolean => {
  * nextTradingDay('2024-05-03'); // '2024-05-07' (어린이날 연휴 다음 개장일)
  */
 export const nextTradingDay = (date: DateString): DateString => {
-  let d = toDate(date);
+  const d = toDate(date);
   d.setUTCDate(d.getUTCDate() + 1);
 
   while (!isTradingDay(toDateString(d))) {
@@ -99,7 +99,7 @@ export const nextTradingDay = (date: DateString): DateString => {
  * previousTradingDay('2024-05-07'); // '2024-05-02' (어린이날 연휴 이전 개장일)
  */
 export const previousTradingDay = (date: DateString): DateString => {
-  let d = toDate(date);
+  const d = toDate(date);
   d.setUTCDate(d.getUTCDate() - 1);
 
   while (!isTradingDay(toDateString(d))) {

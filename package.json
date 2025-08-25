@@ -32,13 +32,19 @@
     "dev": "tsdown --watch",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
+    "lint": "eslint --config eslint.config.ts",
     "release": "bumpp && npm publish"
   },
   "devDependencies": {
+    "@eslint/js": "^9.34.0",
     "@types/node": "^22.15.17",
     "bumpp": "^10.1.0",
+    "eslint": "^9.34.0",
+    "globals": "^16.3.0",
+    "jiti": "^2.5.1",
     "tsdown": "^0.11.9",
     "typescript": "^5.8.3",
+    "typescript-eslint": "^8.40.0",
     "vitest": "^3.1.3"
   }
 }
