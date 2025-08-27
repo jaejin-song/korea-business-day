@@ -1,11 +1,11 @@
-import type { DateString } from "../types";
+import type { DateString } from "../types.ts";
 
-import { HOLIDAYS_2022, TRADING_HOLIDAYS_2022 } from "./2022";
-import { HOLIDAYS_2023, TRADING_HOLIDAYS_2023 } from "./2023";
-import { HOLIDAYS_2024, TRADING_HOLIDAYS_2024 } from "./2024";
-import { HOLIDAYS_2025, TRADING_HOLIDAYS_2025 } from "./2025";
-import { HOLIDAYS_2026, TRADING_HOLIDAYS_2026 } from "./2026";
-import { HOLIDAYS_2027, TRADING_HOLIDAYS_2027 } from "./2027";
+import { HOLIDAYS_2022, TRADING_HOLIDAYS_2022 } from "./2022.ts";
+import { HOLIDAYS_2023, TRADING_HOLIDAYS_2023 } from "./2023.ts";
+import { HOLIDAYS_2024, TRADING_HOLIDAYS_2024 } from "./2024.ts";
+import { HOLIDAYS_2025, TRADING_HOLIDAYS_2025 } from "./2025.ts";
+import { HOLIDAYS_2026, TRADING_HOLIDAYS_2026 } from "./2026.ts";
+import { HOLIDAYS_2027, TRADING_HOLIDAYS_2027 } from "./2027.ts";
 
 export const holidaysByYear: Record<string, DateString[]> = {
   "2022": HOLIDAYS_2022,
