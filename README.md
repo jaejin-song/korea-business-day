@@ -44,19 +44,6 @@ console.log(isBusinessDay("2025-01-01")); // false (신정)
 console.log(isHoliday("2025-03-03")); // true (삼일절 대체휴일)
 ```
 
-### 모듈별 선택적 사용 (Tree-shaking 최적화)
-
-```typescript
-// 영업일 관련 함수만 사용
-import { isBusinessDay, nextBusinessDay } from "korea-business-day/business";
-
-// 공휴일 관련 함수만 사용
-import { isHoliday, isTradingHoliday } from "korea-business-day/holiday";
-
-// 타입만 사용
-import type { DateString } from "korea-business-day/types";
-```
-
 ## API 문서
 
 ### Business 모듈
