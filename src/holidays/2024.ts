@@ -1,4 +1,4 @@
-import type { DateString } from "../types";
+import type { DateString } from "../types.ts";
 
 // https://open.krx.co.kr/contents/MKD/01/0110/01100305/MKD01100305.jsp
 export const HOLIDAYS_2024: DateString[] = [

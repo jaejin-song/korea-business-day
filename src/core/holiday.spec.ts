@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isHoliday, isTradingHoliday } from "./holiday";
+import { isHoliday, isTradingHoliday } from "./holiday.ts";
 
 describe("holiday", () => {
   describe("isHoliday", () => {

@@ -1,4 +1,4 @@
-import type { DateString } from "../types";
+import type { DateString } from "../types.ts";
 
 /**
  * 날짜 문자열을 한국 표준시(KST) Date 객체로 변환합니다

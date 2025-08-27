@@ -1,5 +1,5 @@
-import type { DateString } from "../types";
-import { holidaysByYear, tradingHolidaysByYear } from "../holidays";
+import type { DateString } from "../types.ts";
+import { holidaysByYear, tradingHolidaysByYear } from "../holidays/index.ts";
 
 /**
  * 주어진 날짜가 한국의 공휴일인지 판단합니다
