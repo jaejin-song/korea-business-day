@@ -1,4 +1,3 @@
-import type { DateString } from "../types.ts";
 import { toDate, toDateString, isWeekend } from "./date-utils.ts";
 import { isTradingHoliday } from "./holiday.ts";
 
@@ -12,7 +11,7 @@ import { isTradingHoliday } from "./holiday.ts";
  * isTradingDay('2024-12-31'); // false (연말 특별휴무일)
  * isTradingDay('2024-01-06'); // false (토요일, 주말)
  */
-export const isTradingDay = (date: DateString): boolean => {
+export const isTradingDay = (date: string): boolean => {
   return !isWeekend(date) && !isTradingHoliday(date);
 };
 
@@ -25,7 +24,7 @@ export const isTradingDay = (date: DateString): boolean => {
  * nextTradingDay('2024-12-29'); // '2025-01-02' (연말특별휴무 다음 개장일)
  * nextTradingDay('2024-05-03'); // '2024-05-07' (어린이날 연휴 다음 개장일)
  */
-export const nextTradingDay = (date: DateString): DateString => {
+export const nextTradingDay = (date: string): string => {
   const d = toDate(date);
   d.setUTCDate(d.getUTCDate() + 1);
 
@@ -45,7 +44,7 @@ export const nextTradingDay = (date: DateString): DateString => {
  * previousTradingDay('2025-01-02'); // '2024-12-29' (연말 이전 개장일)
  * previousTradingDay('2024-05-07'); // '2024-05-02' (어린이날 연휴 이전 개장일)
  */
-export const previousTradingDay = (date: DateString): DateString => {
+export const previousTradingDay = (date: string): string => {
   const d = toDate(date);
   d.setUTCDate(d.getUTCDate() - 1);
 

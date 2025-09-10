@@ -1,4 +1,3 @@
-import type { DateString } from "../types.ts";
 import { holidaysByYear, tradingHolidaysByYear } from "../holidays/index.ts";
 
 /**
@@ -9,7 +8,7 @@ import { holidaysByYear, tradingHolidaysByYear } from "../holidays/index.ts";
  * isHoliday('2024-01-01'); // true (신정)
  * isHoliday('2024-01-02'); // false (평일)
  */
-export const isHoliday = (date: DateString): boolean => {
+export const isHoliday = (date: string): boolean => {
   const year = date.split("-")[0];
   return holidaysByYear[year]?.includes(date) ?? false;
 };
@@ -22,7 +21,7 @@ export const isHoliday = (date: DateString): boolean => {
  * isTradingHoliday('2024-01-01'); // true (신정, 거래소 휴무)
  * isTradingHoliday('2024-01-02'); // false (정상 거래일)
  */
-export const isTradingHoliday = (date: DateString): boolean => {
+export const isTradingHoliday = (date: string): boolean => {
   const year = date.split("-")[0];
   return tradingHolidaysByYear[year]?.includes(date) ?? false;
 };
