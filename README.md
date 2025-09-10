@@ -62,28 +62,30 @@ console.log(isBusinessDay("2025-01-01")); // false (신정, 공휴일)
 console.log(isBusinessDay("2025-01-04")); // false (토요일, 주말)
 ```
 
-#### `nextBusinessDay(date: string): string`
+#### `nextBusinessDay(date: string, count: number = 1): string`
 
-주어진 날짜 다음의 첫 번째 영업일을 반환합니다.
+주어진 날짜 다음의 N번째 영업일을 반환합니다.
 
 ```typescript
 import { nextBusinessDay } from "korea-business-day/business";
 
-console.log(nextBusinessDay("2025-01-01")); // '2025-01-02' (신정 다음 영업일)
+console.log(nextBusinessDay("2025-01-01")); // '2025-01-02' (신정 다음 첫 번째 영업일)
+console.log(nextBusinessDay("2025-01-01", 2)); // '2025-01-03' (신정 다음 두 번째 영업일)
 console.log(nextBusinessDay("2025-01-03")); // '2025-01-06' (금요일 다음 영업일은 월요일)
-console.log(nextBusinessDay("2025-12-31")); // '2026-01-02' (연말연시 다음 영업일)
+console.log(nextBusinessDay("2025-12-31", 5)); // '2026-01-09' (연말연시 다음 다섯 번째 영업일)
 ```
 
-#### `previousBusinessDay(date: string): string`
+#### `previousBusinessDay(date: string, count: number = 1): string`
 
-주어진 날짜 이전의 첫 번째 영업일을 반환합니다.
+주어진 날짜 이전의 N번째 영업일을 반환합니다.
 
 ```typescript
 import { previousBusinessDay } from "korea-business-day/business";
 
-console.log(previousBusinessDay("2025-01-02")); // '2024-12-31' (신정 이전 영업일)
+console.log(previousBusinessDay("2025-01-02")); // '2024-12-31' (신정 이전 첫 번째 영업일)
+console.log(previousBusinessDay("2025-01-08", 2)); // '2025-01-03' (월요일 이전 두 번째 영업일)
 console.log(previousBusinessDay("2025-01-06")); // '2025-01-03' (월요일 이전 영업일은 금요일)
-console.log(previousBusinessDay("2025-03-04")); // '2025-02-28' (삼일절 대체휴일 이전 영업일)
+console.log(previousBusinessDay("2025-03-04", 3)); // '2025-02-26' (삼일절 대체휴일 이전 세 번째 영업일)
 ```
 
 #### `isTradingDay(date: string): boolean`
@@ -98,27 +100,30 @@ console.log(isTradingDay("2025-01-01")); // false (신정, 거래소 휴무)
 console.log(isTradingDay("2025-12-31")); // false (연말휴장일)
 ```
 
-#### `nextTradingDay(date: string): string`
+#### `nextTradingDay(date: string, count: number = 1): string`
 
-주어진 날짜 다음의 첫 번째 주식시장 개장일을 반환합니다.
+주어진 날짜 다음의 N번째 주식시장 개장일을 반환합니다.
 
 ```typescript
 import { nextTradingDay } from "korea-business-day/business";
 
-console.log(nextTradingDay("2025-01-01")); // '2025-01-02' (신정 다음 개장일)
+console.log(nextTradingDay("2025-01-01")); // '2025-01-02' (신정 다음 첫 번째 개장일)
+console.log(nextTradingDay("2025-01-01", 2)); // '2025-01-03' (신정 다음 두 번째 개장일)
 console.log(nextTradingDay("2025-12-30")); // '2026-01-02' (연말 다음 개장일)
-console.log(nextTradingDay("2025-05-05")); // '2025-05-07' (어린이날 다음 개장일)
+console.log(nextTradingDay("2025-05-05", 3)); // '2025-05-09' (어린이날 다음 세 번째 개장일)
 ```
 
-#### `previousTradingDay(date: string): string`
+#### `previousTradingDay(date: string, count: number = 1): string`
 
-주어진 날짜 이전의 첫 번째 주식시장 개장일을 반환합니다.
+주어진 날짜 이전의 N번째 주식시장 개장일을 반환합니다.
 
 ```typescript
 import { previousTradingDay } from "korea-business-day/business";
 
-console.log(previousTradingDay("2025-01-02")); // '2024-12-30' (신정 이전 개장일)
+console.log(previousTradingDay("2025-01-02")); // '2024-12-30' (신정 이전 첫 번째 개장일)
+console.log(previousTradingDay("2025-01-08", 2)); // '2025-01-03' (월요일 이전 두 번째 개장일)
 console.log(previousTradingDay("2025-05-07")); // '2025-05-02' (어린이날 연휴 이전 개장일)
+console.log(previousTradingDay("2025-05-07", 5)); // '2025-04-30' (어린이날 연휴 이전 다섯 번째 개장일)
 ```
 
 ### Holiday 모듈
