@@ -1,4 +1,3 @@
-import type { DateString } from "../types.ts";
 import { toDate, toDateString, isWeekend } from "./date-utils.ts";
 import { isHoliday } from "./holiday.ts";
 
@@ -11,7 +10,7 @@ import { isHoliday } from "./holiday.ts";
  * isBusinessDay('2024-01-01'); // false (신정, 공휴일)
  * isBusinessDay('2024-01-06'); // false (토요일, 주말)
  */
-export const isBusinessDay = (date: DateString): boolean => {
+export const isBusinessDay = (date: string): boolean => {
   return !isWeekend(date) && !isHoliday(date);
 };
 
@@ -24,7 +23,7 @@ export const isBusinessDay = (date: DateString): boolean => {
  * nextBusinessDay('2024-01-05'); // '2024-01-08' (금요일 다음 영업일은 월요일)
  * nextBusinessDay('2024-12-31'); // '2025-01-02' (연말연시 다음 영업일)
  */
-export const nextBusinessDay = (date: DateString): DateString => {
+export const nextBusinessDay = (date: string): string => {
   const d = toDate(date);
   d.setUTCDate(d.getUTCDate() + 1);
 
@@ -44,7 +43,7 @@ export const nextBusinessDay = (date: DateString): DateString => {
  * previousBusinessDay('2024-01-08'); // '2024-01-05' (월요일 이전 영업일은 금요일)
  * previousBusinessDay('2024-03-02'); // '2024-02-29' (3월 1일 삼일절 이전 영업일)
  */
-export const previousBusinessDay = (date: DateString): DateString => {
+export const previousBusinessDay = (date: string): string => {
   const d = toDate(date);
   d.setUTCDate(d.getUTCDate() - 1);
 

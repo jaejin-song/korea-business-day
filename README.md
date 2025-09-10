@@ -50,7 +50,7 @@ console.log(isHoliday("2025-03-03")); // true (삼일절 대체휴일)
 
 영업일 계산 관련 함수들입니다. 주말과 공휴일을 제외한 평일을 기준으로 합니다.
 
-#### `isBusinessDay(date: DateString): boolean`
+#### `isBusinessDay(date: string): boolean`
 
 주어진 날짜가 영업일인지 판단합니다.
 
@@ -62,7 +62,7 @@ console.log(isBusinessDay("2025-01-01")); // false (신정, 공휴일)
 console.log(isBusinessDay("2025-01-04")); // false (토요일, 주말)
 ```
 
-#### `nextBusinessDay(date: DateString): DateString`
+#### `nextBusinessDay(date: string): string`
 
 주어진 날짜 다음의 첫 번째 영업일을 반환합니다.
 
@@ -74,7 +74,7 @@ console.log(nextBusinessDay("2025-01-03")); // '2025-01-06' (금요일 다음 �
 console.log(nextBusinessDay("2025-12-31")); // '2026-01-02' (연말연시 다음 영업일)
 ```
 
-#### `previousBusinessDay(date: DateString): DateString`
+#### `previousBusinessDay(date: string): string`
 
 주어진 날짜 이전의 첫 번째 영업일을 반환합니다.
 
@@ -86,7 +86,7 @@ console.log(previousBusinessDay("2025-01-06")); // '2025-01-03' (월요일 이�
 console.log(previousBusinessDay("2025-03-04")); // '2025-02-28' (삼일절 대체휴일 이전 영업일)
 ```
 
-#### `isTradingDay(date: DateString): boolean`
+#### `isTradingDay(date: string): boolean`
 
 주어진 날짜가 주식시장 개장일인지 판단합니다.
 
@@ -98,7 +98,7 @@ console.log(isTradingDay("2025-01-01")); // false (신정, 거래소 휴무)
 console.log(isTradingDay("2025-12-31")); // false (연말휴장일)
 ```
 
-#### `nextTradingDay(date: DateString): DateString`
+#### `nextTradingDay(date: string): string`
 
 주어진 날짜 다음의 첫 번째 주식시장 개장일을 반환합니다.
 
@@ -110,7 +110,7 @@ console.log(nextTradingDay("2025-12-30")); // '2026-01-02' (연말 다음 개장
 console.log(nextTradingDay("2025-05-05")); // '2025-05-07' (어린이날 다음 개장일)
 ```
 
-#### `previousTradingDay(date: DateString): DateString`
+#### `previousTradingDay(date: string): string`
 
 주어진 날짜 이전의 첫 번째 주식시장 개장일을 반환합니다.
 
@@ -125,7 +125,7 @@ console.log(previousTradingDay("2025-05-07")); // '2025-05-02' (어린이날 연
 
 공휴일 및 거래소 휴무일 확인 함수들입니다.
 
-#### `isHoliday(date: DateString): boolean`
+#### `isHoliday(date: string): boolean`
 
 주어진 날짜가 한국의 공휴일인지 판단합니다.
 
@@ -139,7 +139,7 @@ console.log(isHoliday("2025-01-02")); // false (평일)
 console.log(isHoliday("2025-12-31")); // false (연말휴장일은 공휴일 아님)
 ```
 
-#### `isTradingHoliday(date: DateString): boolean`
+#### `isTradingHoliday(date: string): boolean`
 
 주어진 날짜가 한국 주식시장 휴무일인지 판단합니다.
 
@@ -180,11 +180,9 @@ console.log(isTradingHoliday("2025-01-01")); // true
 모든 함수는 완전한 타입 정의를 제공합니다.
 
 ```typescript
-import type { DateString } from "korea-business-day/types";
-
-// DateString 타입은 'YYYY-MM-DD' 형식을 보장합니다
-const date: DateString = "2025-01-01"; // ✅ 올바른 형식
-const invalidDate: DateString = "25-1-1"; // ❌ 타입 에러
+// 모든 날짜는 'YYYY-MM-DD' 형식의 문자열을 사용합니다
+const date: string = "2025-01-01"; // ✅ 올바른 형식
+const invalidDate: string = "25-1-1"; // 런타임에서 확인 필요
 ```
 
 ## 라이선스

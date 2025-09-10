@@ -1,7 +1,6 @@
-import type { DateString } from "../types.ts";
 
 // https://open.krx.co.kr/contents/MKD/01/0110/01100305/MKD01100305.jsp
-export const HOLIDAYS_2022: DateString[] = [
+export const HOLIDAYS_2022: string[] = [
   "2022-01-31", // 설날
   "2022-02-01", // 설날
   "2022-02-02", // 설날
@@ -17,7 +16,7 @@ export const HOLIDAYS_2022: DateString[] = [
   "2022-10-10", // 한글날(대체휴일)
 ];
 
-export const TRADING_HOLIDAYS_2022: DateString[] = [
+export const TRADING_HOLIDAYS_2022: string[] = [
   ...HOLIDAYS_2022,
   "2022-12-30", // 연말휴장일
 ];
