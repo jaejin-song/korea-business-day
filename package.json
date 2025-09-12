@@ -5,15 +5,15 @@
   "type": "module",
   "license": "MIT",
   "packageManager": "pnpm@9.2.0",
-  "homepage": "https://github.com/jaejin-song/korea-business-day#readme",
+  "homepage": "https://github.com/jjlabsio/korea-business-day#readme",
   "bugs": {
-    "url": "https://github.com/jaejin-song/korea-business-day/issues"
+    "url": "https://github.com/jjlabsio/korea-business-day/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaejin-song/korea-business-day.git"
+    "url": "https://github.com/jjlabsio/korea-business-day.git"
   },
-  "author": "Jaejin Song <wowlxx28@gmail.com>",
+  "author": "jjlabsio",
   "files": [
     "dist"
   ],
